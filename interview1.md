@@ -7,6 +7,7 @@ Teoretical questions:
 - variance/covariance
 - Null
 - AnyRef vs AnyVal vs Any
+
 Practical:
 - Future, sequence vs parallel, f1 zip f2, Future.map, onComplete
 - List[A] design
