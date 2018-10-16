@@ -42,4 +42,4 @@ getElementById, byTagName, byName, byClassName
 ```
 Асинхронная связь с сервером без перезагрузки страницы
 ```
-
+- Fetch vs Promise vs XMLHttpRequest
