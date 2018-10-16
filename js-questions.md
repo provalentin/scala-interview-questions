@@ -39,5 +39,7 @@ getElementById, byTagName, byName, byClassName
 ```
 
 - AJAX
+```
 Асинхронная связь с сервером без перезагрузки страницы
+```
 
