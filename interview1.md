@@ -1,7 +1,7 @@
 Teoretical questions:
 - что такое Nothing, зачем он нужен.
 - case class
-- object
+- object as singleton, companion object
 - trait, линеаризация
 - ???
 - variance/covariance
