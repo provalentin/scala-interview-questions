@@ -5,9 +5,10 @@ Teoretical questions:
 - trait, линеаризация
 - ???
 - variance/covariance
-- List[A] design
 - Null
 - AnyRef vs AnyVal vs Any
+Practical:
 - Future, sequence vs parallel, f1 zip f2, Future.map, onComplete
+- List[A] design
 - List[Option[A]] => Option[List[A]]
-
+- find n-th prime number
