@@ -38,8 +38,35 @@ Function declaration vs Function Expression
 getElementById, byTagName, byName, byClassName
 ```
 
+
+
+
 - AJAX
 ```
 Асинхронная связь с сервером без перезагрузки страницы
 ```
 - Fetch vs Promise vs XMLHttpRequest
+
+
+
+JS ПОВТОРЕНИЕ
+
+- Что такое DOM
+
+- Методы взаимодействия с DOM
+
+- что тавое use strict? описать основне моменты, акцент на this
+
+- замыкание. 
+
+- typeof? instanceof?
+
+- sum(2)(3)
+
+- Object.keys()
+
+- setTimeout, как работает цикл событий в браузере?
+
+- prototype? как реализовывается наследование?
+
+- var a = b = 5;???
