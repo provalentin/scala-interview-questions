@@ -1,0 +1,1213 @@
+General Questions: 
+What did you learn yesterday/this week?
+Why and how did you start learning Scala?
+What excites or interests you about coding in Scala?
+What is a recent technical challenge you experienced and how did you solve it?
+Talk about your preferred development environment. (OS, Editor or IDE, Tools, etc.)
+What are your thoughts about the other JVM languages compared to Scala?
+Do you think that the Scala language and community is mature enough? 
+Language Questions: 
+What is the difference between a var, a val and def?
+What is the difference between a trait and an abstract class?
+What is the difference between an object and a class?
+What is a case class?
+What is the difference between a Java future and a Scala future?
+What is the difference between unapply and apply, when would you use them?
+What is a companion object?
+What is the difference between the following terms and types in Scala: Nil, Null, None, Nothing?
+What is Unit?
+What is the difference between a call-by-value and call-by-name parameter? 
+How does Scala’s Stream trait levarages call-by-name?
+Define uses for the Option monad and good practices it provides.
+How does yield work?
+Explain the implicit parameter precedence.
+What operations is a for comprehension syntactic sugar for?
+Streams: 
+What consideration you need to have when you use Scala’s Streams?
+What technique does the Scala’s Streams use internally? 
+Functional Programming Questions: 
+What is a functor?
+What is a applicative?
+What is a monad? 
+What are the monad axioms?
+What Scala data types are, or behave like, monads?
+What are the basic and optional requirement/s to conform a Monad?
+Explain higher order functions.
+What is gained from using immutable objects?
+What is tail recursion? 
+How does it differentiate from common recursion?
+What issues are there with tail recursive functions in the JVM?
+How does the Scala compiler optimize a tail recursive function?How do you ensure that the compiler optimizes the tail recursive function?
+What is function currying?
+What are implicit parameters?
+What are typeclasses?
+What are lenses?
+What is and which are the uses of: Enumerators, Enumeratees and Iteratee 
+Reactive Programming Questions: 
+Explain the actor model.
+What are benefits of non-blocking (asynchronous I/O) over blocking (synchronous I/O).
+Do you think that Scala has the same async spirit as Node.js?
+Explain the difference between concurrency and parallelism, and name some constructs you can use in Scala to
+leverage both.
+What is the global ExecutionContext? 
+What does the global ExecutionContext underlay?
+Akka: 
+Which are the 3 main components in a Stream? 
+Coding Questions: 
+How can you make a List[String] from a List[List[String]]?
+What is the difference (if any) between these 2 statements? scala var x = immutable.Set[Int]() val y =
+mutable.Set[Int]() 
+Fun Questions: 
+What’s a cool project that you’ve recently worked on?
+What testing framework for Scala do you use?
+What do you know about property based testing frameworks, such as Scalacheck?
+Do you like ‘scalaz‘? 
+
+
+
+
+
+
+
+
+Question 1. Explain What Is Scala?
+
+Answer :
+
+Scala is an object functional programming and scripting language for general software applications designed to express solutions in a concise manner.
+
+Question 2. What Is A ‘scala Set’? What Are Methods Through Which Operation Sets Are Expressed?
+
+Answer :
+
+Scala set is a collection of pairwise elements of the same type.  Scala set does not contain any duplicate elements.  There are two kinds of sets, mutable and immutable.
+
+Question 3. What Is A ‘scala Map’?
+
+Answer :
+
+Scala map is a collection of key or value pairs.  Based on its key any value can be retrieved.  Values are not unique but keys are unique in the Map.
+
+Question 4. What Is The Advantage Of Scala?
+
+Answer :
+
+    Less error prone functional style
+    High maintainability and productivity
+    High scalability
+    High testability
+    Provides features of concurrent programming
+
+Question 5. In What Ways Scala Is Better Than Other Programming Language?
+
+Answer :
+
+    The arrays uses regular generics, while in other language, generics are bolted on as an afterthought and are completely separate but have overlapping behaviours with arrays.
+    Scala has immutable “val” as a first class language feature. The “val” of scala is similar to Java final variables.  Contents may mutate but top  reference is immutable.
+    Scala lets ‘if blocks’, ‘for-yield loops’, and ‘code’ in braces to return a value. It is more preferable, and eliminates the need for a separate ternary operator.
+    Singleton has singleton objects rather than C++/Java/ C# classic static.  It is a cleaner solution
+    Persistent immutable collections are the default and built into the standard library.
+    It has native tuples and a concise code
+    It has no boiler plate code
+
+Question 6. What Are The Scala Variables?
+
+Answer :
+
+Values and variables are two shapes that come in Scala. A value variable is constant and cannot be changed once assigned.  It is immutable, while a regular variable, on the other hand, is mutable, and you can change the value.
+
+The two types of variables are
+
+var  myVar : Int=0;
+val   myVal: Int=1;
+
+Question 7. Mention The Difference Between An Object And A Class ?
+
+Answer :
+
+A class is a definition for a description.  It defines a type in terms of methods and composition of other types.  A class is a blueprint of the object. While, an object is a singleton, an instance of a class which is unique. An anonymous class is created for every object in the code, it inherits from whatever classes you declared object to implement.
+
+Question 8. What Is Recursion Tail In Scala?
+
+Answer :
+
+‘Recursion’ is a function that calls itself. A function that calls itself, for example, a function ‘A’ calls function ‘B’, which calls the function ‘C’.  It is a technique used frequently in functional programming.  In order for a tail recursive, the call back to the function must be the last function to be performed.
+
+Question 9. What Is ‘scala Trait’ In Scala?
+
+Answer :
+
+‘Traits’ are used to define object types specified by the signature of the supported methods.  Scala allows to be partially implemented but traits may not have constructor parameters.  A trait consists of method and field definition, by mixing them into classes it can be reused.
+
+Question 10. When Can You Use Traits?
+
+Answer :
+
+There is no specific rule when you can use traits, but there is a guideline which you can consider.
+
+    If the behaviour will not be reused, then make it a concrete class. Anyhow it is not a reusable behaviour.
+    In order to inherit from it in Java code, an abstract class can be used.
+    If efficiency is a priority then lean towards using a class
+    Make it a trait if it might be reused in multiple and unrelated classes. In different parts of the class hierarchy only traits can be mixed into different parts.
+    You can use abstract class, if you want to distribute it in compiled form and expects outside groups to write classes inheriting from it.
+
+Question 11. What Is Case Classes?
+
+Answer :
+
+Case classes provides a recursive decomposition mechanism via pattern matching, it is a regular classes which export their constructor parameter. The constructor parameters of case classes can be accessed directly and are treated as public values.
+
+Question 12. What Is The Use Of Tuples In Scala?
+
+Answer :
+
+Scala tuples combine a fixed number of items together so that they can be passed around as whole. A tuple is immutable and can hold objects with different types, unlike an array or list.
+
+Question 13. What Is Function Currying In Scala?
+
+Answer :
+
+Currying is the technique of transforming a function that takes multiple arguments into a function that takes a single argument Many of the same techniques as language like Haskell and LISP are supported by Scala. Function currying is one of the least used and misunderstood one.
+
+Question 14. What Are Implicit Parameters In Scala?
+
+Answer :
+
+Implicit parameter is the way that allows parameters of a method to be “found”.  It is similar to default parameters, but it has a different mechanism for finding the “default” value.  The implicit parameter is a parameter to method or constructor that is marked as implicit.  This means if a parameter value is not mentioned then the compiler will search for an “implicit” value defined within a scope.
+
+Question 15. What Is A Closure In Scala?
+
+Answer :
+
+A closure is a function whose return value depends on the value of the variables declared outside the function.
+
+Question 16. What Is Monad In Scala?
+
+Answer :
+
+A monad is an object that wraps another object. You pass the Monad mini-programs, i.e functions, to perform the data manipulation of the underlying object, instead of manipulating the object directly.  Monad chooses how to apply the program to the underlying object.
+
+Question 17. What Is Scala Anonymous Function?
+
+Answer :
+
+In a source code, anonymous functions are called ‘function literals’ and at run time, function literals are instantiated into objects called function values.  Scala provides a relatively easy syntax for defining anonymous functions.
+
+Question 18. Explain ‘scala Higher Order’ Functions?
+
+Answer :
+
+Scala allows the definition of higher order functions.  These are functions that take other functions as parameters, or whose result is a function.  In the following example, apply () function takes another function ‘f’ and a value ‘v’ and applies function to v.
+
+Example:
+
+object Test {
+ def main(args: Array[String]) {
+ println( apply( layout, 10) )
+ }
+ def apply(f: Int => String, v: Int) = f(v)
+ def layout[A](x: A) = "[" + x.toString() + "]"
+
+When the above code is compiled and executed, it produces following result.
+
+         C:/>scalac Test.scala
+          C:/>scala Test
+          [10]
+          C:/>
+
+Question 19. What Is The Difference Between Var And Value?
+
+Answer :
+
+In scala, you can define a variable using either a, val or var keywords.  The difference between val and var is,  var is much like java declaration, but val is little different.  We cannot change the reference to point to another reference, once the variable is declared using val. The variable defined using var keywords are mutable and can be changed any number of times.
+
+Question 20. What Are Option, Some And None In Scala?
+
+Answer :
+
+‘Option’ is a Scala generic type that can either be ‘some’ generic value or none.  ‘Queue’ often uses it to represent primitives that may be null.
+
+Question 21. How Do I Append To The List?
+
+Answer :
+
+In scala to append into a list, use “:+” single value
+
+       var myList = List.empty[String]
+       myList :+= "a"
+       myList :+= "b"
+       myList :+= "c"
+       use++ for appending a list
+       var myList = List.empty[String]
+       myList ++= List("a", "b", "c")
+
+Question 22. How Can You Format A String?
+
+Answer :
+
+To format a string, use the .format () method, in scala you can use
+
+Val formatted=  “%s %i”.format (mystring.myInt)
+
+Question 23. Why Scala Prefers Immutability?
+
+Answer :
+
+Scala prefers immutability in design and in many cases uses it as default. Immutability can help when dealing with equality issues or concurrent programs.
+
+Question 24. What Are The Four Types Of Scala Identifiers ?
+
+Answer :
+
+The four types of identifiers are
+
+    Alpha numeric identifiers
+    Operator identifiers
+    Mixed identifiers
+    Literal identifiers
+
+Question 25. What Are The Different Types Of Scala Literals?
+
+Answer :
+
+The different types of literals in scala are
+
+    Integer literals
+    Floating point literals
+    Boolean literals
+    Symbol literals
+    Character literals
+    String literals
+    Multi-Line strings
+
+Question 26. What Is Primary Constructor? What Is Secondary Or Auxiliary Constructor In Scala? What Is The Purpose Of Auxiliary Constructor In Scala? Is It Possible To Overload Constructors In Scala?
+
+Answer :
+
+Scala has two kinds of constructors:
+
+    Primary Constructor
+    Auxiliary Constructor
+
+Primary Constructor: In Scala, Primary Constructor is a constructor which is defined with class definition itself. Each class must have one Primary Constructor: Either Parameter constructor or Parameterless constructor.
+
+Example:-
+
+class Person
+
+Above Person class has one Zero-parameter or No-Parameter or Parameterless Primary constructor to create instances of this class.
+
+class Person (firstName: String, lastName: String)
+
+Above Person class has a two Parameters Primary constructor to create instances of this class.
+
+Auxiliary Constructor: Auxiliary Constructor is also known as Secondary Constructor. We can declare a Secondary Constructor using ‘def’ and ‘this’ keywords as shown below:
+
+class Person (firstName: String, middleName:String, lastName: String){
+  def this(firstName: String, lastName: String){
+      this(firstName, "", lastName)
+  }
+}
+
+Question 27. What Is The Use Of Auxiliary Constructors In Scala?please Explain The Rules To Follow In Defining Auxiliary Constructors In Scala?
+
+Answer :
+
+In Scala, The main purpose of Auxiliary Constructors is to overload constructors. Like Java, We can provide various kinds of constructors so that use can choose the right one based on his requirement.
+
+Auxiliary Constructor Rules:
+
+    They are like methods only. Like methods, we should use ‘def’ keyword to define them.
+    We should use same name ‘this’ for all Auxiliary Constructors.
+    Each Auxiliary Constructor should start with a call to previous defined another Auxiliary Constructor or Primary Constructor. Otherwise compile-time error.
+    Each Auxiliary Constructor should differ with their parameters list: may be by number or types.
+    Auxiliary Constructors cannot call a super class constructors. They should call them through Primary Constructor only.
+    All Auxiliary Constructors call their Primary Constructor either directly or indirectly through other Auxiliary Constructors.
+
+NOTE:- If you want to learn about Scala’s Constructors, please refer my Scala posts at: Primary Constructor and Auxiliary Constructor.
+
+Question 28. What Are The Differences Between Array And Arraybuffer In Scala?
+
+Answer :
+
+Differences between Array and ArrayBuffer in Scala:
+
+    Array is fixed size array. We cannot change its size once its created.
+    ArrayBuffer is variable size array. It can increase or decrease it’s size dynamically.
+    Array is something similar to Java’s primitive arrays.
+    ArrayBuffer is something similar to Java’s ArrayList.
+
+Question 29. What Is Case Class? What Is Case Object? What Are The Advantages Of Case Class?
+
+Answer :
+
+Case class is a class which is defined with “case class” keywords. Case object is an object which is defined with “case object” keywords. Because of this “case” keyword, we will get some benefits to avoid boilerplate code.
+
+We can create case class objects without using “new” keyword. By default, Scala compiler prefixes “val” for all constructor parameters. That’s why without using val or var, Case class’s constructor parameters will become class members, it is not possible for normal classes.
+
+Advantages of case class:
+
+    By default, Scala Compiler adds toString, hashCode and equals methods. We can avoid writing this boilerplate code.
+    By default, Scala Compiler adds companion object with apply and unapply methods that’s why we don’t need new keyword to create instances of a case class.
+    By default, Scala Compiler adds copy method too.
+    We can use case classes in Pattern Matching.
+    By default, Case class and Case Objects are Serializable.
+
+Question 30. When Compare To Normal Class, What Are The Major Advantages Or Benefits Of A Case-class?
+
+Answer :
+
+The following are the major advantages or benefits of a Case class over Normal Classes:
+
+    Avoids lots of boiler-plate code by adding some useful methods automatically.
+    By default, supports Immutability because it’s parameters are ‘val’
+    Easy to use in Pattern Matching.
+    No need to use ‘new’ keyword to create instance of Case Class.
+    By default, supports Serialization and Deserialization.
+
+Question 31. What Is The Usage Of Isinstanceof And Asinstanceof Methods In Scala? Is There Anything Similar Concept Available In Java?
+
+Answer :
+
+Both isInstanceOf and asInstanceOf methods are defined in Any class. So no need import to get these methods into any class or object.
+
+“isInstanceOf” method is used to test whether the object is of a given type or not. If so, it returns true. Otherwise returns false.
+
+scala> val str = "Hello"
+
+scala>str.isInstanceOf[String]
+res0: Boolean = false  
+
+“asInstanceOf” method is used to cast the object to the given a type. If the given object and type are of same type, then it cast to given type. Otherwise, it throws java.lang.ClassCastException.
+
+scala> val str = "Hello".asInstanceOf[String]
+str: String = Hello
+
+In Java, ‘instanceof’ keyword is similar to Scala’s ‘isInstanceOf’ method. In Java, the following kind of manual type casting is similar to Scala’s ‘asInstanceOf’ method.
+
+AccountService service = (AccountService)
+ context.getBean("accountService");
+
+Question 32. How Do You Prove That By Default, Case Object Is Serializable And Normal Object Is Not?
+
+Answer :
+
+Yes, By Default, Case Object is Serializable. But normal object is not. We can prove this by using isInstanaceOf method as shown below:
+
+scala> object MyNormalObject
+defined object MyNormalObject
+
+scala> MyNormalObject.isInstanceOf[Serializable]
+res0: Boolean = false
+
+scala> case object MyCaseObject
+defined object MyCaseObject
+
+scala> MyCaseObject.isInstanceOf[Serializable]
+res1: Boolean = true
+
+Question 33. Difference Between Array And List In Scala?
+
+Answer :
+
+    Arrays are always Mutable where as List is always Immutable.
+    Once created, We can change Array values where as we cannot change List Object.
+    Arrays are fixed-size data structures where as List is variable-sized data structures. List’s size is automatically increased or decreased based on it’s operations we perform on it.
+    Arrays are Invariants where as Lists are Covariants.
+
+Question 34. What Is The Difference Between “val” And “lazy Val” In Scala? What Is Eager Evaluation? What Is Lazy Evaluation?
+
+Answer :
+
+As we discussed in my Basic Scala Interview Questions, “val” means value or constant which is used to define Immutable variables.
+
+There are two kinds of program evaluations:
+
+    Eager Evaluation
+    Lazy Evaluation
+
+Eager Evaluation means evaluating program at compile-time or program deployment-time irrespective of clients are using that program or not.
+
+Lazy Evaluation means evaluating program at run-time on-demand that means when clients access the program then only its evaluated.
+
+The difference between “val” and “lazy val” is that “val” is used to define variables which are evaluated eagerly and “lazy val” is also used to define variables but they are evaluated lazily.
+
+Question 35. What Is The Relationship Between Equals Method And == In Scala? Differentiate Scala’s == And Java’s == Operator?
+
+Answer :
+
+compare two instances with ==, Scala calls that object’s equals() method automatically.
+
+Java’s == operator is used to check References Equality that is whether two references are pointing to the same object or not. Scala’s == is used to check Instances Equality that is whether two instances are equal or not.
+
+Question 36. Difference Between Scala’s Inner Class And Java’s Inner Class?
+
+Answer :
+
+In Java, Inner class is associated with Outer class that is Inner class a member of the Outer class.
+
+Unlike Java, Scala treats the relationship between Outer class and Inner class differently. Scala’s Inner class is associated with Outer class object.
+
+Question 37. What Is Diamond Problem? How Scala Solves Diamond Problem?
+
+Answer :
+
+A Diamond Problem is a Multiple Inheritance problem. Some people calls this problem as Deadly Diamond Problem.
+
+In Scala, it occurs when a Class extends more than one Traits which have same method definition.
+
+Unlike Java 8, Scala solves this diamond problem automatically by following some rules defined in Language. Those rules are called “Class Linearization”.
+
+Example:-
+
+trait A{   
+  def display(){ println("From A.display")  }
+}
+trait B extends A{ 
+  override def display() { println("From B.display") }
+}
+trait C extends A{ 
+  override def display() { println("From C.display") }
+}
+class D extends B with C{ }
+ 
+object ScalaDiamonProblemTest extends App {
+    val d = new D
+    d display
+}
+
+Here output is “From C.display” form trait C. Scala Compiler reads “extends B with C” from right to left and takes “display” method definition from lest most trait that is C.
+
+Question 38. Why Scala Does Not Have “static” Keyword? What Is The Main Reason For This Decision?
+
+Answer :
+
+As we know, Scala does NOT have “static” keyword at all. This is the design decision done by Scala Team.
+
+The main reason to take this decision is to make Scala as a Pure Object-Oriented Language. “static” keyword means that we can access that class members without creating an object or without using an object. This is completely against with OOP principles.
+
+If a Language supports “static” keyword, then that Language is not a Pure Object-Oriented Language. For instance, as Java supports “static” keyword, it is NOT a Pure Object-Oriented Language. But Scala is a Pure Object-Oriented Language.
+
+Question 39. What Is The Use Of “object” Keyword In Scala? How To Create Singleton Objects In Scala?
+
+Answer :
+
+In Scala, object keyword is used the following purposes:
+
+    It is used to create singleton object in Scala.
+    object MySingletonObject
+    Here, MySingletonObject becomes singleton object automatically.
+
+object keyword is used to define Scala Applications that is executable Scala programs.
+
+object MyScalaExecutableProgram{   
+   def main(args: Array[String]){
+       println("Hello World")
+   }
+}
+
+When we define main method in object as shown above (its same as main() method in Java), it becomes automatically as a executable Scala program.
+
+It is used to define static members like static variables and static methods without using ‘static’ keyword.
+
+object MyScalaStaticMembers{ 
+  val PI: Double = 3.1414 
+  def add(a: Int, b: Int) = a + b
+}
+
+By def PI variable and add methods will become as static members. That means we can call them without creating a separate object like MyScalaStaticMembers.add(10,20).
+
+Question 40. How To Define Factory Methods Using Object Keyword In Scala? What Is The Use Of Defining Factory Methods In Object?
+
+Answer :
+
+In Scala, we use ‘object’ keyword to define Factory methods. The main purpose of these Factory methods in Scala is to avoid using ‘new’ keyword. Without using ‘new’ keyword we can create objects.
+
+To define Factory methods:
+
+We can use apply method to define Factory methods in Scala. If we have Primary Constructor and Multiple Auxiliary constructors, then we need to define multiple apply methods as shown below.
+
+class Person(val firstName: String, val middleName: String, val lastName: String){
+  def this(firstName: String, lastName: String){
+    this(firstName,"",lastName)
+  }
+}
+object Person{
+  def apply(val firstName: String, val middleName: String, val lastName: String) 
+        = new Person(firstName,middleName,lastName)
+ 
+  def apply(val firstName: String, val lastName: String) 
+        = new Person(firstName, lastName)
+}
+Now we can create Person objects without using new keyword or with new keyword upto your wish.
+val p1 = new Person("Scala","Java")
+or 
+val p1 = Person("Scala","Java")
+
+Question 41. What Is Apply Method In Scala? What Is Unapply Method In Scala? What Is The Difference Between Apply And Unapply Methods In Scala?
+
+Answer :
+
+In Scala, apply and unapply methods play very important role. They are also very useful in Play Framework in mapping and unmapping data between Form data and Model data.
+
+In simple words,
+
+apply method: To compose or assemble an object from it’s components.
+
+unapply method: To decompose or dis-assemble an object into it’s components.
+
+Scala’s apply method: It is used to compose an object by using its components. Suppose if we want to create a Person object, then use firstName and laststName two components and compose Person object as shown below.
+
+class Person(val firstName: String, val lastName: String)
+object Person{
+  def apply(firstName: String, lastName: String) 
+        = new Person(firstName, lastName)
+}
+
+Scala’s unapply method:
+
+It is used to decompose an object into its components. It follows reverse process of apply method. Suppose if we have a Person object, then we can decompose this object into it’s two components: firstName and laststName as shown below.
+
+class Person(val firstName: String, val lastName: String)
+object Person{
+  def apply(firstName: String, lastName: String) 
+        = new Person(firstName, lastName)
+ 
+    def unapply(p: Person): (String,String) 
+        = (p.firstName, p.lastName)
+}
+
+Question 42. How Does It Work Under-the-hood, When We Create An Instance Of A Class Without Using ‘new’ Keyword In Scala? When Do We Go For This Approach? How To Declare Private Constructors In Scala?
+
+Answer :
+
+In Scala, when we create an instance of a Class without using ‘new’ keyword, internally it make a call to appropriate apply method available in Companion object. Here appropriate apply method means that matched with parameters.
+
+When do we choose this option: When we need to provide private private constructor and we need to avoid using ‘new’ keyword, we can implement only apply method with same set of parameters and allow our class users to create it without new keyword.
+
+Question 43. How Do We Declare A Private Primary Constructor In Scala? How Do We Make A Call To A Private Primary Constructor In Scala?
+
+Answer :
+
+In Scala, we can declare a private Primary Constructor very easily. Just define a Primary Constructor as it is and add ‘private’ just after class name and before parameter list as shown below:
+
+class Person private (name: String)
+object Person{
+ def apply(name: String) = new Person(name)
+}
+
+As it’s a private constructor, we cannot call it from outside. We should provide a factory method (that is apply method) as shown above and use that constructor indirectly.
+
+Question 44. Does A Companion Object Access Private Members Of It’s Companion Class In Scala?
+
+Answer :
+
+Generally, private members means accessible only within that class. However Scala’s Companion class and Companion Object has provided another feature.
+
+In Scala, a Companion object can access private members of it’s Companion class and Companion class can access it’s Companion object’s private members.
+
+Question 45. What Is The Main Design Decision About Two Separate Keywords: Class And Object In Scala? How Do We Define Instance Members And Static Members In Scala?
+
+Answer :
+
+In Scala, we use class keyword to define instance members and object keyword to define static members. Scala does not have static keyword, but still we can define them by using object keyword.
+
+The main design decision about this is that the clear separation between instance and static members. Loosely coupling between them. And other major reason is to avoid static keyword so that Scala will become a Pure-OOP Language.
+
+Question 46. What Is Object In Scala? Is It A Singleton Object Or Instance Of A Class?
+
+Answer :
+
+Unlike Java, Scala has two meanings about ‘object’. Don’t get confuse about this, I will explain it clearly. In Java, we have only one meaning for object that is “An instance of a class”.
+
+Like Java, the first meaning of object is “An instance of a class”.
+
+val p1 = new Person("Scala","Java")
+or 
+val p1 = Person("Scala","Java")
+
+Second meaning is that object is a keyword in Scala. It is used to define Scala Executable programs, Companion Objects, Singleton Objects etc.
+
+Question 47. What Is A Companion Object In Scala? What Is A Companion Class In Scala? What Is The Use Of Companion Object In Scala?
+
+Answer :
+
+In simple words, if a Scala class and object shares the same name and defined in the same source file, then that class is known as “Companion Class” and that object is known as “Companion Object”.
+
+When we create a Class by using Scala “class” keyword and Object by using Scala “object” keyword with same name and within the same source file, then that class is known as “Companion Class” and that object is known as “Companion Object”.
+
+Example:-
+
+Employee.scala
+class Employee{ }
+object Employee{ }
+
+In Scala, The main purpose of Companion Object is to define apply methods and avoid using new keyword in creating an instance of that Companion class object.
+
+Question 48. How To Implement Interfaces In Scala?
+
+Answer :
+
+As we know from Java background, we use interface to define contact.
+
+However, there is no interface concept in Scala. Even, Scala doesn’t have interface keyword. Scala has a more powerful and flexible concept i.e. trait for this purpose.
+
+Question 49. What Is Range In Scala? How To Create A Range In Scala?
+
+Answer :
+
+Range is a Lazy Collection in Scala. Range is a class available in ‘scala’ package like ‘scala.Range’. It is used to represent a sequence of integer values. It is an ordered sequence of integers.
+
+Example:-
+
+scala> 1 to 10
+
+res0: scala.collection.immutable.Range.Inclusive = Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala> 1 until 10
+
+res1: scala.collection.immutable.Range = Range(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+Question 50. How Many Values Of Type Nothing Have In Scala?
+
+Answer :
+
+In Scala, Nothing type have no values that is zero. It does not have any values. It is a subtype of all Value classes and Reference classes.
+
+Question 51. How Many Values Of Type Unit Have In Scala?
+
+Answer :
+
+In Scala, Unit is something similar to Java’s void keyword. It is used to represent “No value exists”. It has one and only one value that is ().
+
+Question 52. What Is A Pure Function?
+
+Answer :
+
+A pure function is a function without any observable side-effects. That means it returns always same results irrespective how many times we call it with same inputs.
+
+A pure function always gives same output for the same inputs.
+
+For Example:-
+
+scala> 10 + 20
+res0: Int = 30
+scala>
+scala> 10 + 20
+res0: Int = 30
+
+Here “+” a pure function available in Int class. It gives same result 30 for same inputs 10 and 30, irrespective how many times we call it.
+
+Question 53. In Fp, What Is The Difference Between A Function And A Procedure?
+
+Answer :
+
+Both are used to perform computation, however they have one major difference in Functional Programming world.
+
+A function is a computation unit without side-effect where as a Procedure is also a computation unit with side-effects.
+
+Question 54. What Are The Major Differences Between Scala’s Auxiliary Constructors And Java’s Constructors?
+
+Answer :
+
+Scala’s Auxiliary constructor is almost similar to Java’s constructor with few differences.
+
+Compared to Java’s constructors, Auxiliary constructors have the following few differences:
+
+    The auxiliary constructors are called using “this” keyword.
+    All auxiliary constructor are defined with the same name that is “this”. In Java, we use class name to define constructors.
+    Each auxiliary constructor must start with a call to a previously defined auxiliary constructor or the primary constructor.
+    We use ‘def’ keyword to define auxiliary constructors like method/function definition. In Java, constructor definition and Method definition is different.
+
+Question 55. What Is The Use Of ‘yield’ Keyword In Scala’s For-comprehension Construct?
+
+Answer :
+
+We can use ‘yield’ keyword in Scala’s for-comprehension construct. ‘for/yield’ is used to iterate a collection of elements and generates new collection of same type. It does not change the original collection. It generates new collection of same type as original collection type.
+
+For example, if we use ‘for/yield’ construct to iterate a List then it generates a new List only.
+
+scala> val list = List(1,2,3,4,5)
+list: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> for(l <- list) yield l*2
+res0: List[Int] = List(2, 4, 6, 8, 10)
+
+Question 56. What Is Guard In Scala’s For-comprehension Construct?
+
+Answer :
+
+In Scala, for-comprehension construct has an if clause which is used to write a condition to filter some elements and generate new collection. This if clause is also known as “Guard”.
+
+If that guard is true, then add that element to new collection. Otherwise, it does not add that element to original collection.
+
+Example:- For-comprehension Guard to generate only Even numbers into new collection.
+
+scala> val list = List(1,2,3,4,5,6,7,8,9,10)
+list: List[Int] = List(1, 2, 3, 4, 5 , 6 , 7 , 8 , 9 , 10)
+
+scala> for(l <- list if l % 2 =0 ) yield l
+res0: List[Int] = List(2, 4, 6, 8, 10)
+
+Question 57. How Scala Solves Inheritance Diamond Problem Automatically And Easily Than Java 8?
+
+Answer :
+
+If we use Java 8’s Interface with Default methods, we will get Inheritance Diamond Problem. Developer has to solve it manually in Java 8. It does not provide default or automatic resolution for this problem.
+
+In Scala, we will get same problem with Traits but Scala is very clever and solves Inheritance Diamond Problem automatically using Class Linearization concept.
+
+Question 58. In Scala, Pattern Matching Follows Which Design Pattern? In Java, ‘isinstanceof’ Operator Follows Which Design Pattern?
+
+Answer :
+
+In Scala, Pattern Matching follows Visitor Design Pattern. In the same way, Java’s ‘isinstanceof’ operator also follows Visitor Design Pattern.
+
+Question 59. What Is The Current Latest Version Of Scala? What Is The Major Change Or Update In Scala 2.12?
+
+Answer :
+
+Current Scala’s stable is 2.11.7. It supports Java SE 7.
+
+The major change or update in Scala 2.12 version is that it supports Java SE 8 or later versions only. Scala 2.12 is not a binary compatible with the 2.11.x series. It’s still in Mile Stone Builds only.
+
+Question 60. What Is Option In Scala? What Are Some And None? What Is Option/some/none Design Pattern In Scala?
+
+Answer :
+
+In Scala, Option is used to represent optional values that is either exist or not exist.
+
+Option is an abstract class. Option has two subclasses: Some and None. All three (Option, Some and None) are defined in “scala” package like “scala.Option”.
+
+Option is a bounded collection in Scala, which contains either zero or one element. If Option contains zero elements that is None. If Option contains one element, that is Some.
+
+Some is used to represent existing value. None is used to represent non-existent value.
+
+Example:-
+
+def get(val index: Int): Option[String]
+
+Let us assume that this method is from List. This method has a return type of Option[String]. If List contains elements, this get method returns “Some[String]” element available in that index position. Otherwise, it returns “None” (that is no elements)
+
+Some is a case class and None is an Object. As both are case class/object, we can use them in Pattern Matching very well.
+
+The combination of all these three definitions is known as Option/Some/None Design Pattern in Scala.
+
+Question 61. What Is Either In Scala? What Are Left And Right In Scala? Explain Either/left/right Design Pattern In Scala?
+
+Answer :
+
+In Scala, Either is an abstract class. It is used to represent one value of two possible types. It takes two type parameters: Either[A,B].
+
+It exactly have two subtypes: Left and Right. If Either[A,B] represents an instance A that means it is Left. If it represents an instance B that means it is Right.
+
+This is known as Either/Left/Right Design Pattern in Scala.
+
+Question 62. What Is The Equivalent Construct Of Scala’s Option In Java Se 8? What Is The Use Of Option In Scala?
+
+Answer :
+
+Scala’s Option is similar to Java SE 8’s Optional. Java SE 8 has introduced a new utility class Optional to represent existing or non-existing of some value. Optional is available in java.util package.
+
+Both Scala’s Option and Java SE 8’s Optional are used to represent optional values. Both are used to avoid unwanted null checks and NullPointerException.
+
+Question 63. What Are The Advantages Of Functional Programming (fp) Or Advantages Of Pure Functions?
+
+Answer :
+
+The following are the Advantages of Functional Programming (FP) or Advantages of Pure Functions:
+
+    More Modular
+    Easier to understand Or Easier reason about
+    Easier to test
+    Less prone to bugs
+    Easier to reuse
+    Easier to Parallelism and generalize
+
+Question 64. What Are The Popular Scala-based Frameworks To Develop Restful Web Services Or Rest Api?
+
+Answer :
+
+There are many Scala-Based Framework to develop RESTful Web Services. Most popular frameworks are:
+
+    Play Framework: n Play, we call REST API URLs as routes. We place all routes at once place in Play framework. It is a stateless web framework to develop REST API easily.
+    Scalatra Framework: It is very simple and easy Scala-based web framework to develop REST API
+    Spray Framework: It is very concise and built on top of Akka framework so it’s better to develop REST API using Actor Model.
+    Lift Framework: It allows routing using Pattern Matching concept.
+
+Question 65. What Is The Best Framework To Generate Rest Api Documentation For Scala-based Applications?
+
+Answer :
+
+Swagger is is the best tool for this purpose. It is very simple and open-source tool for generating REST APIs documentation with JSON for Scala-based applications.
+
+    If we use Play with Scala to develop your REST API, then use play-swagger module for REST API documentation.
+    If we use Spray with Scala to develop your REST API, then use spray-swagger module for REST API documentation.
+
+Question 66. Like Hibernate For Java-based Applications, What Are The Popular Orm Frameworks Available To Use In Play/scala Based Applications?
+
+Answer :
+
+Like JPA, Hibernate and Toplink etc ORM Frameworks for Java-based applications, There are many ORM frameworks to use in Play/Scala based applications.
+
+Popular ORM frameworks for Play/Scala based applications:
+
+    Slick
+    Anorm
+    SORM(Scala ORM)
+    Squeryl
+
+Question 67. What Is The Best Tool To Develop Play/scala Applications To Persist Data In Mongodb Nosql Data Store?
+
+Answer :
+
+ReactiveMongo is the best Scala Driver to develop Play/Scala applications to persist data in MongoDB NoSQL data store. It supports fully non-blocking and asynchronous I/O operations.
+
+Question 68. Popular Clients Who Are Using Play And Scala To Develop Their Applications?
+
+Answer :
+
+Thousands of clients are using Play and Scala in Production. The following list is the more popular clients who are using Play and Scala actively.
+
+    LinkedIn
+    The Guardian
+    Ocado
+    LuchidChart
+    GOV.UK
+
+Question 69. What Is The Best Language To Use With Play Framework: Scala Or Java?
+
+Answer :
+
+Play 2 is completely written in Scala. If we use Java with Play framework, we need to face many issues because Java does not support full FP features.
+
+Scala is the best option to use with Play framework to develop Highly Scalable, Better Performance with Concurrency/Parallelism and Low latency applications, because:
+
+    Play 2 is completely written in Scala.
+    It supports full FP features.
+    It is more expression language than Java.
+    It supports Akka Actor model very easily
+    It supports some new OOP feature like Traits.
+    Play’s built-in templates are developed in Scala
+
+Question 70. How Scala Supports Both Highly Scalable And Highly Performance Applications?
+
+Answer :
+
+As Scala supports Multi-Paradigm Programming(Both OOP and FP) and uses Actor Concurrency Model, we can develop very highly Scalable and high-performance applications very easily.
+
+Question 71. What Are The Available Build Tools To Develop Play And Scala Based Applications?
+
+Answer :
+
+The following three are most popular available Build Tools to develop Play and Scala Applications:
+
+    SBT
+    Maven
+    Gradle
+
+Question 72. What Is Sbt? What Is The Best Build Tool To Develop Play And Scala Applications?
+
+Answer :
+
+SBT stands for Scala Build Tool. Its a Simple Build Tool to develop Scala-based applications.
+
+Most of the people uses SBT Build tool for Play and Scala Applications. For example, IntelliJ IDEA Scala Plugin by default uses SBT as Build tool for this purpose.
+
+Question 73. What Are The Available Unit Testing, Functional Testing And/or Bdd Frameworks For Play And Scala Based Applications?
+
+Answer :
+
+The following are most popular available Unit Testing, Functional Testing and/or BDD Frameworks for Play/Scala Based applications:
+
+    Spec2
+    ScalaTest
+    ScalaCheck
+    Mokito
+
+Question 74. What Is The Best Code-coverage Tool Available For Play And Scala Based Applications?
+
+Answer :
+
+SCoverage is the Code-coverage tool for Play and Scala based applications.
+
+SCoverage stands for Scala Code-coverage tool. It has three separate plug-ins to supports the following build tools:
+
+    SBT
+    Maven
+    Gradle
+
+Question 75. What Is The Best Scala Style Checker Tool Available For Play And Scala Based Applications?
+
+Answer :
+
+Like Checkstyle for Java-Based Applications, Scalastyle is best Scala style checker tool available for Play and Scala based applications.
+
+Scalastyle observes our Scala source code and indicates potential problems with it. It has three separate plug-ins to supports the following build tools:
+
+    SBT
+    Maven
+    Gradle
+
+It has two separate plug-ins to supports the following two IDEs:
+
+    IntelliJ IDEA
+    Eclipse IDE
+
+Question 76. Which Ides Support Play And Scala-based Applications Development And How?
+
+Answer :
+
+The following two popular IDEs support Play and Scala-Based Applications Development:
+
+    IntelliJ IDEA
+    Eclipse IDE
+
+They support by using Scala Plugins like Eclipse IDE has a Scala IDE for Eclipse to support Play and Scala-Based Applications Development.
+
+IntelliJ IDEA has a plug-in like “Scala Plugin for IntelliJ IDEA” to support “Scala, SBT and Play 2 Framework” based applications.
+
+Question 77. What Is The Default Unit And Functional Testing Framework For Play? What Is The Default Build Tool For Play? What Is The Default Template Engine For Play? What Is The Built-in Web Server Available In Play Framework?
+
+Answer :
+
+Play Framework’s default Unit and Functional Testing Framework is Spec2. It is very easy to test Play/Scala based applications using Spec2 Framework.
+
+Play Framework’s Default built-in template is “Twirl”. It was developed in Scala. By using these templates, we can develop Play/Scala based applications very easily.
+
+The Built-in or Default Web Server available for Play Framework is Netty Server.
+
+Question 78. Why Scala Is Better Than Java? What Are The Advantages Of Scala Over Java (java 8)? Compare To Java What Are The Major Advantages Or Benefits Of Scala?
+
+Answer :
+
+Because Scala supports the following extra features, it is better than Java 8:
+
+    Full FP Features
+    More Expression Language
+    Pattern Matching
+    Better support for Akka Actor Model
+    Automatic resolution for Inheritance Diamond Problem with Traits
+    Asynchronous and Non-blocking IO programming using Akka Framework
+    Fully Reactive Streaming API
+
+Question 79. What Is An Anonymous Function In Scala? What Is A Function Literal In Scala? What Are The Advantages Of A Anonymous Function/function Literal In Scala?
+
+Answer :
+
+Anonymous Function is also a Function but it does not have any function name. It is also known as a Function Literal.
+
+The advantages of a Anonymous Function/Function Literal in Scala:
+
+    We can assign a Function Literal to variable
+    We can pass a Function Literal to another function/method
+    We can return a Function Literal as another function/method result/return value.
+
+Question 80. What Is An Higher-order Function (hof)?
+
+Answer :
+
+Higher Order Function (HOF) is also a function but which performs one, two or both of the following things:
+
+    Take other functions as arguments
+    Return functions as their results
+
+Question 81. What Are The Differences Between Case Class And Normal Class?
+
+Answer :
+
+Case class is also a class, however when we compare it with normal class, it gives the following extra features or benefits:
+
+    By default, Case-class constructor parameters are ‘val’. We don’t need to declare parameters with ‘val’.
+    By default, Case-class constructor parameters become class fields.
+    These methods are added automatically: toString, equals, hashCode, copy. apply and unapply.
+    It automatically gets Companion object.
+    No need to use ‘new’ keyword to create instance of Case Class.
+    Easy to use in Pattern Matching.
+
+All these features are added by Scala Compiler at compile-time. It is not possible with normal class.
+
+Question 82. What Are The Advantages Of Play/scala Stack To Develop Web Applications?
+
+Answer :
+
+The following are the major advantages of Play/Scala stack to develop web applications:
+
+    Open Source: Play is an Open-source free-software framework to develop web applications.
+    Better Productivity: Play framework’s Auto-reload feature improves Developer Productivity. No need to build, deploy and test our changes. Just do our changes and refresh the page to see our changes.
+    Stateless and Easy to Develop REST API: Play is HTTP based stateless model to serve web requests so it is very easy to develop REST API or RESTful Web Services.
+    Better Error-Handling: If we develop our web application using Play framework,it informs all errors in the browser in very useful format. It shows error message, the file location, line number where error occurred, highlighting the code-snippet to understand the error very easily.
+    High Performance and Better Scalability With Reactive: Play framework is developed by following Reactive design patterns and it is built on top of Netty sever to utilize Non-blocking IO Feature. Because of this feature, we can develop very highly Scalable and performance applications very easily.
+    Easy to Extend: Play is very flexible framework and supports developing plug-ins very easy to extend it’s features and functionality.
+    Highly Concurrency and Better Parallelism: As both Scala and Play supports Functional Programming, it is very easy to develop Highly Concurrency and Better Parallelism applications very easily because FP supports Immutability, Pure Functions (Functions without side-effects), Pattern Matching, Actor Model etc.
+    Better Reusability, Easy to Test and More Modular: As both Scala and Play supports Functional Programming, we can develop more modular and reusable applications. It is also very easy to test more modular applications.
+
+Question 83. What Are The Java’s Oop Constructs Not Supported By Scala? What Are The Scala’s Oop Constructs Not Supported By Java? What Are The New Oops Constructs Introduced By Scala, But Not Supported By Java?
+
+Answer :
+
+Java’s OOP constructs, which are not supported by Scala:
+
+    There is no interface concept in Scala
+    There is no Enum concept in Scala
+
+Scala’s OOP constructs, which are not supported by Java:
+
+OR
+
+The new OOPs constructs introduced by Scala, but not supported by Java:
+
+    Scala Traits
+    Solving Inheritance Diamond Problem automatically.
+
+Question 84. What Is Call-by-name? Does Scala And Java Support Call-by-name? What Is The Difference Between Call-by-value And Call-by-name Function Parameters?
+
+Answer :
+
+Call-by-name means evaluates method/function parameters only when we need them or we access them. If we don’t use them, then it does not evaluate them.
+
+Scala supports both call-by-value and call-by-name function parameters. However, Java supports only call-by-value, but not call-by-name.
+
+Difference between call-by-value and call-by-name:
+
+The major difference between these two are described below:
+
+    In Call-by-name, the function parameters are evaluated only whenever they are needed but not when the function is called.
+    In Call-by-value, the function parameters are evaluated when the function is called.
+    In Call-by-value, the parameters are evaluated before executing function and they are evaluated only once irrespective of how many times we used them in that function.
+    In Call-by-name, the parameters are evaluated whenever we access them and they are evaluated each time we use them in that function.
+    Scala Syntax Differences
+
+Call-by-value:
+
+1 def myFunction(a: Int, b: Int) { }
+
+Here both a and b are Call-by-value parameters to myFunction.
+
+Call-by-name:
+
+1 def myFunction(a: Int, b: => Int) { }
+
+Here both a is a Call-by-value parameter and b is Call-by-name to myFunction.
+
+Question 85. What Are The Popular Mvc Frameworks For Scala Language To Develop Web Applications?
+
+Answer :
+
+The following are the most popular MVC frameworks available for Scala Language to develop Web Applications:
+
+    Play Framework
+    Scalatra Framework
+    Spray Framework
+    Lift Framework
+
+Question 86. What Is Extractor In Scala? What Is The Difference Between Constructor And Extractor In Scala? What Is The Use Of Extractor In Scala?
+
+Answer :
+
+Not only in Java and Scala, in almost all OOP languages Constructor is used to create (or assemble) an object or an instance of a Class using it’s parameters (or components). Extractor is quite opposite to Constructor.
+
+In Scala, Extractor is used to decompose or disassemble an object into it’s parameters (or components).
+
+In Scala, apply method is a Constructor. Internally, Extractor uses unapply method to decompose an objects into it’s parts (or parameters). In Scala, Extractor is mainly used in Pattern Matching concept. We will discuss Pattern Matching concept soon.
+
+Question 87. What Is The Use Of ‘???’ In Scala-based Applications?
+
+Answer :
+
+This ‘???’ three question marks is not an operator, a method in Scala. It is used to mark a method which is ‘In Progress’ that means Developer should provide implementation for that one.
+
+This method is define in scala.PreDef class as shown below:
+
+def ??? : Nothing = throw new NotImplementedError
+
+If we run that method without providing implementation, then it throws ‘NotImplementedError’ error as shown below:
+
+scala> def add(a:Int, b:Int) : Int = ???
+add: (a: Int, b: Int)Int
+ 
+scala> add(10,20)
+
+scala.NotImplementedError: an implementation is missing
+
+Question 88. Explain The Main Difference Between List And Stream In Scala Collection Api? How Do We Prove That Difference? When Do We Choose Stream?
+
+Answer :
+
+In Scala, both List and Stream are from Collection API and works almost similar. Both are Immutable collections.
+
+However, there is one main difference between List and Stream in Scala Collection API: That is List elements are evaluated Eagerly and Stream elements are evaluated Lazily that means when we access them.
+
+scala> var list1 = List(1,2,3,4)
+list1: List[Int] = List(1, 2, 3, 4)
+
+Here we can observe that all List elements evaluated at the time of creating List object. However, if we do same thing on Stream, we cannot see all elements. We can see only first evaluated element and remaining elements are evaluated lazily as shown below:
+
+scala> var s1 = Stream(1,2,3,4)
+s1: scala.collection.immutable.Stream[Int] = Stream(1, ?)
+
+When we want Lazy collection to evaluate elements only when we access them then it’s better to use Stream.
+
+Question 89. What Is The Difference Between :: And #:: In Scala? What Is The Difference Between ::: And #::: In Scala?
+
+Answer :
+
+In Scala Collection API,
+
+    :: and ::: are methods available in List class.
+    #:: and #::: are methods available in Stream class
+    In List class, :: method is used to append an element to the beginning of the list.
+
+    scala> var list1 = List(1,2,3,4)
+    list1: List[Int] = List(1, 2, 3, 4)
+     
+    scala> list1 = 0 :: list1
+    list1: List[Int] = List(0, 1, 2, 3, 4)
+
+    In List class, ::: method is used to concatenate the elements of a given list in front of this list.
+
+    scala> var list1 = List(3,4,5)
+    list1: List[Int] = List(3, 4, 5)
+     
+    scala> val list2 = List(1,2) ::: list1
+    list2: List[Int] = List(1, 2, 0, 1, 2, 3, 4)
+
+    In Stream class, #:: method is used to append a given element at beginning of the stream. Only this newly added element is evaluated and followed by lazily evaluated stream elements.
+
+    scala> var s1 = Stream(1,2,3,4)
+    s1: scala.collection.immutable.Stream[Int] = Stream(1, ?)
+     
+    scala> s1 = 0 #:: s1
+    s1: scala.collection.immutable.Stream[Int] = Stream(0, ?)
+
+    In Stream class, #::: method is used to concatenate a given stream at beginning of the stream. Only this newly added element is evaluated and followed by lazily evaluated stream elements.
+
+    scala> var s1 = Stream(1,2,3,4)
+    s1: scala.collection.immutable.Stream[Int] = Stream(1, ?)
+     
+    scala> val s2 = Stream(-1,0) #::: s1
+    s2: scala.collection.immutable.Stream[Int] = Stream(-1, ?)
+
+    :: method works as a cons operator for List class and #:: method words as a cons operator for Stream class. Here ‘cons’ stands for construct.
+    ::: method works as a concatenation operator for List class and #::: method words as a concatenation operator for Stream class.
+
+Question 90. If I Want To Become A Fullstack Scala Developer, Which Technology Stack I Should Learn?
+
+Answer :
+
+If you want to become a Fullstack Scala Developer, you should learn the following technology stack:
+
+    Scala 2.11.7
+    Play 2.4.6 Framework
+    Akka 2.3 Framework
+    One Build Tool: SBT/Maven
+    One JS Framework: CoffeeScript/JavaScript
+    One IDE: IntelliJ IDEA 15/ Eclipse IDE 4.x
+    One TDD & BDD Framework: ScalaTest,Spec2,ScalaCheck,Mockito
+    Micro Services with Play and Scala
+    SCoverage
+    Scalastyle
+    Functional Programming Design Patterns
+    Machine Learning with Scala
+
+
