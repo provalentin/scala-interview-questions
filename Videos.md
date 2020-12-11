@@ -10,4 +10,6 @@ Videos:
 
 
 Books: 
-1. https://fpspecialty.github.io/scala-with-cats/scala-with-cats.html RU
+1. Scala with cats [https://fpspecialty.github.io/scala-with-cats/scala-with-cats.html] RU
+2. Scala with cats [https://underscore.io/books/scala-with-cats/] Eng
+2. Essential Scala Eng  [https://books.underscore.io/essential-scala/essential-scala.html]
