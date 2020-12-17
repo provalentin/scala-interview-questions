@@ -18,3 +18,4 @@ Books:
 
 Sample Projects
 1. Scala Pet Store [https://github.com/pauljamescleary/scala-pet-store]
+2. Scala Pet Store Explanation [https://github.com/m99coder/scala-pet-store-step-by-step]
