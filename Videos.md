@@ -7,6 +7,7 @@ Videos:
 5. Thinking Fuctionally [https://www.youtube.com/watch?v=-KA3BSdqYug&ab_channel=ScalaUAConference]
 6. Scala Best Practices [https://www.youtube.com/watch?v=DGa58FfiMqc&t=921s&ab_channel=ScalaDaysConferences]
 7. 12 steps to better Scala [https://www.youtube.com/watch?v=71yhnTGw0hY&ab_channel=RISKIDENT]
+8. Intro to Cats [https://www.youtube.com/watch?v=BPexEu4yFVc&t=1177s&ab_channel=DevInsideYou]
 
 
 Books: 
