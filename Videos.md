@@ -16,6 +16,7 @@ Books:
 2. Essential Scala Eng  [https://books.underscore.io/essential-scala/essential-scala.html]
 3. Modern Scala Projects [https://www.amazon.com/dp/B07FDBHZ7V] [https://www.packtpub.com/product/modern-scala-projects/9781788624114]
 4. Neothyte Guide to Scala Ru [https://github.com/anton-k/ru-neophyte-guide-to-scala]
+5. Effective Scala Ru [https://twitter.github.io/effectivescala/index-ru.html]
 
 Sample Projects
 1. Scala Pet Store [https://github.com/pauljamescleary/scala-pet-store]
